@@ -36,6 +36,11 @@ namespace iTasks
 
         public Programador Programador { get; set; }
 
+
+        // tipo assim, n sei se é 100% necessario passar o id se ja passas o programador e o tipotarefa em cima mas yah
+        public int ProgramadorId { get; set; }
+        public int TipoTarefaId { get; set; }
+
         public override string ToString()
         {
             return $"{Descricao} - {Programador.Nome} - Ordem: {Ordem}";
