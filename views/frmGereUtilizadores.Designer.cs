@@ -68,7 +68,7 @@
             // btGravarGestor
             // 
             this.btGravarGestor.Location = new System.Drawing.Point(392, 348);
-            this.btGravarGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btGravarGestor.Margin = new System.Windows.Forms.Padding(4);
             this.btGravarGestor.Name = "btGravarGestor";
             this.btGravarGestor.Size = new System.Drawing.Size(268, 28);
             this.btGravarGestor.TabIndex = 37;
@@ -79,7 +79,7 @@
             // txtNomeGestor
             // 
             this.txtNomeGestor.Location = new System.Drawing.Point(392, 98);
-            this.txtNomeGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeGestor.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeGestor.Name = "txtNomeGestor";
             this.txtNomeGestor.Size = new System.Drawing.Size(267, 22);
             this.txtNomeGestor.TabIndex = 36;
@@ -97,7 +97,7 @@
             // txtIdGestor
             // 
             this.txtIdGestor.Location = new System.Drawing.Point(392, 43);
-            this.txtIdGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdGestor.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdGestor.Name = "txtIdGestor";
             this.txtIdGestor.ReadOnly = true;
             this.txtIdGestor.Size = new System.Drawing.Size(81, 22);
@@ -117,9 +117,9 @@
             // 
             this.groupBox1.Controls.Add(this.lstListaGestores);
             this.groupBox1.Location = new System.Drawing.Point(8, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(365, 560);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
@@ -131,7 +131,7 @@
             this.lstListaGestores.FormattingEnabled = true;
             this.lstListaGestores.ItemHeight = 16;
             this.lstListaGestores.Location = new System.Drawing.Point(4, 19);
-            this.lstListaGestores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstListaGestores.Margin = new System.Windows.Forms.Padding(4);
             this.lstListaGestores.Name = "lstListaGestores";
             this.lstListaGestores.Size = new System.Drawing.Size(357, 537);
             this.lstListaGestores.TabIndex = 0;
@@ -152,9 +152,9 @@
             this.groupBox2.Controls.Add(this.txtNomeGestor);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(16, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(681, 591);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
@@ -164,7 +164,7 @@
             // 
             this.chkGereUtilizadores.AutoSize = true;
             this.chkGereUtilizadores.Location = new System.Drawing.Point(392, 295);
-            this.chkGereUtilizadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkGereUtilizadores.Margin = new System.Windows.Forms.Padding(4);
             this.chkGereUtilizadores.Name = "chkGereUtilizadores";
             this.chkGereUtilizadores.Size = new System.Drawing.Size(133, 20);
             this.chkGereUtilizadores.TabIndex = 43;
@@ -184,7 +184,7 @@
             // txtPasswordGestor
             // 
             this.txtPasswordGestor.Location = new System.Drawing.Point(392, 196);
-            this.txtPasswordGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordGestor.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordGestor.Name = "txtPasswordGestor";
             this.txtPasswordGestor.Size = new System.Drawing.Size(267, 22);
             this.txtPasswordGestor.TabIndex = 40;
@@ -193,7 +193,7 @@
             // 
             this.cbDepartamento.FormattingEnabled = true;
             this.cbDepartamento.Location = new System.Drawing.Point(392, 250);
-            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.cbDepartamento.Name = "cbDepartamento";
             this.cbDepartamento.Size = new System.Drawing.Size(267, 24);
             this.cbDepartamento.TabIndex = 41;
@@ -211,7 +211,7 @@
             // txtUsernameGestor
             // 
             this.txtUsernameGestor.Location = new System.Drawing.Point(392, 146);
-            this.txtUsernameGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsernameGestor.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsernameGestor.Name = "txtUsernameGestor";
             this.txtUsernameGestor.Size = new System.Drawing.Size(267, 22);
             this.txtUsernameGestor.TabIndex = 38;
@@ -243,9 +243,9 @@
             this.groupBox3.Controls.Add(this.txtNomeProg);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Location = new System.Drawing.Point(705, 15);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(681, 591);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
@@ -265,7 +265,7 @@
             // 
             this.cbGestorProg.FormattingEnabled = true;
             this.cbGestorProg.Location = new System.Drawing.Point(392, 303);
-            this.cbGestorProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGestorProg.Margin = new System.Windows.Forms.Padding(4);
             this.cbGestorProg.Name = "cbGestorProg";
             this.cbGestorProg.Size = new System.Drawing.Size(267, 24);
             this.cbGestorProg.TabIndex = 43;
@@ -283,17 +283,18 @@
             // btGravarProg
             // 
             this.btGravarProg.Location = new System.Drawing.Point(392, 348);
-            this.btGravarProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btGravarProg.Margin = new System.Windows.Forms.Padding(4);
             this.btGravarProg.Name = "btGravarProg";
             this.btGravarProg.Size = new System.Drawing.Size(268, 28);
             this.btGravarProg.TabIndex = 37;
             this.btGravarProg.Text = "Gravar Dados";
             this.btGravarProg.UseVisualStyleBackColor = true;
+            this.btGravarProg.Click += new System.EventHandler(this.btGravarProg_Click);
             // 
             // txtPasswordProg
             // 
             this.txtPasswordProg.Location = new System.Drawing.Point(392, 196);
-            this.txtPasswordProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordProg.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordProg.Name = "txtPasswordProg";
             this.txtPasswordProg.Size = new System.Drawing.Size(267, 22);
             this.txtPasswordProg.TabIndex = 40;
@@ -302,7 +303,7 @@
             // 
             this.cbNivelProg.FormattingEnabled = true;
             this.cbNivelProg.Location = new System.Drawing.Point(392, 250);
-            this.cbNivelProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbNivelProg.Margin = new System.Windows.Forms.Padding(4);
             this.cbNivelProg.Name = "cbNivelProg";
             this.cbNivelProg.Size = new System.Drawing.Size(267, 24);
             this.cbNivelProg.TabIndex = 41;
@@ -320,7 +321,7 @@
             // txtUsernameProg
             // 
             this.txtUsernameProg.Location = new System.Drawing.Point(392, 146);
-            this.txtUsernameProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsernameProg.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsernameProg.Name = "txtUsernameProg";
             this.txtUsernameProg.Size = new System.Drawing.Size(267, 22);
             this.txtUsernameProg.TabIndex = 38;
@@ -339,9 +340,9 @@
             // 
             this.groupBox4.Controls.Add(this.lstListaProgramadores);
             this.groupBox4.Location = new System.Drawing.Point(8, 23);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(365, 560);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
@@ -353,7 +354,7 @@
             this.lstListaProgramadores.FormattingEnabled = true;
             this.lstListaProgramadores.ItemHeight = 16;
             this.lstListaProgramadores.Location = new System.Drawing.Point(4, 19);
-            this.lstListaProgramadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstListaProgramadores.Margin = new System.Windows.Forms.Padding(4);
             this.lstListaProgramadores.Name = "lstListaProgramadores";
             this.lstListaProgramadores.Size = new System.Drawing.Size(357, 537);
             this.lstListaProgramadores.TabIndex = 0;
@@ -361,7 +362,7 @@
             // txtIdProg
             // 
             this.txtIdProg.Location = new System.Drawing.Point(392, 43);
-            this.txtIdProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdProg.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdProg.Name = "txtIdProg";
             this.txtIdProg.ReadOnly = true;
             this.txtIdProg.Size = new System.Drawing.Size(81, 22);
@@ -380,7 +381,7 @@
             // txtNomeProg
             // 
             this.txtNomeProg.Location = new System.Drawing.Point(392, 98);
-            this.txtNomeProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeProg.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeProg.Name = "txtNomeProg";
             this.txtNomeProg.Size = new System.Drawing.Size(267, 22);
             this.txtNomeProg.TabIndex = 36;
@@ -402,7 +403,7 @@
             this.ClientSize = new System.Drawing.Size(1401, 620);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGereUtilizadores";
             this.Text = "frmListaUtilizadores";
             this.groupBox1.ResumeLayout(false);

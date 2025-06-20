@@ -1,62 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\",
+  "WorkspaceRootPath": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\controllers\\controllerutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:controllers\\controllerutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\onedrive\\\u00E1rea de trabalho\\trabalho_novo_da\\views\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\models\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\models\\tarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\tarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\models\\tipotarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\tipotarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\models\\basededados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\basededados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\onedrive\\\u00E1rea de trabalho\\trabalho_novo_da\\views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\controllers\\controllerutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:controllers\\controllerutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\onedrive\\\u00E1rea de trabalho\\trabalho_novo_da\\models\\tipotarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\tipotarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\models\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\onedrive\\\u00E1rea de trabalho\\trabalho_novo_da\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\onedrive\\\u00E1rea de trabalho\\trabalho_novo_da\\views\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\onedrive\\\u00E1rea de trabalho\\trabalho_novo_da\\controllers\\controllertipotarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:controllers\\controllertipotarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\andre\\downloads\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/iTasks.Basededados/True/SqlTable/dbo.Utilizadors.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\TipoTarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Tarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Basededados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\models\\basededados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\basededados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,8 +53,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Utilizador.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\models\\Utilizador.cs",
+              "RelativeDocumentMoniker": "models\\Utilizador.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\models\\Utilizador.cs",
+              "RelativeToolTip": "models\\Utilizador.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwC4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T18:44:05.031Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -94,194 +95,126 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Utilizador.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\models\\Utilizador.cs",
-              "RelativeDocumentMoniker": "models\\Utilizador.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\models\\Utilizador.cs",
-              "RelativeToolTip": "models\\Utilizador.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "frmGereTiposTarefas.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmGereTiposTarefas.cs",
+              "RelativeDocumentMoniker": "views\\frmGereTiposTarefas.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmGereTiposTarefas.cs",
+              "RelativeToolTip": "views\\frmGereTiposTarefas.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwCEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:45:18.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:47:10.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Basededados.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\models\\Basededados.cs",
-              "RelativeDocumentMoniker": "models\\Basededados.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\models\\Basededados.cs",
-              "RelativeToolTip": "models\\Basededados.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:43:56.72Z",
+              "WhenOpened": "2025-06-20T19:19:01.688Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Tarefa.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\models\\Tarefa.cs",
-              "RelativeDocumentMoniker": "models\\Tarefa.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\models\\Tarefa.cs",
-              "RelativeToolTip": "models\\Tarefa.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAA0AAAAAAAAAA==",
+              "Title": "ControllerUtilizadores.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\Controllers\\ControllerUtilizadores.cs",
+              "RelativeDocumentMoniker": "Controllers\\ControllerUtilizadores.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\Controllers\\ControllerUtilizadores.cs",
+              "RelativeToolTip": "Controllers\\ControllerUtilizadores.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCcAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:44:38.884Z",
+              "WhenOpened": "2025-06-20T18:41:29.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmGereUtilizadores.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmGereUtilizadores.cs",
+              "RelativeDocumentMoniker": "views\\frmGereUtilizadores.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmGereUtilizadores.cs [Design]",
+              "RelativeToolTip": "views\\frmGereUtilizadores.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T18:41:32.744Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmGereUtilizadores.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmGereUtilizadores.cs",
+              "RelativeDocumentMoniker": "views\\frmGereUtilizadores.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmGereUtilizadores.cs",
+              "RelativeToolTip": "views\\frmGereUtilizadores.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCcAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T18:43:19.161Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "TipoTarefa.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\models\\TipoTarefa.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\models\\TipoTarefa.cs",
               "RelativeDocumentMoniker": "models\\TipoTarefa.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\models\\TipoTarefa.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\models\\TipoTarefa.cs",
               "RelativeToolTip": "models\\TipoTarefa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:45:03.197Z",
+              "WhenOpened": "2025-06-20T19:24:43.255Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ControllerUtilizadores.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\Controllers\\ControllerUtilizadores.cs",
-              "RelativeDocumentMoniker": "Controllers\\ControllerUtilizadores.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\Controllers\\ControllerUtilizadores.cs",
-              "RelativeToolTip": "Controllers\\ControllerUtilizadores.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:58:10.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmGereTiposTarefas.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmGereTiposTarefas.cs",
-              "RelativeDocumentMoniker": "views\\frmGereTiposTarefas.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmGereTiposTarefas.cs [Design]",
-              "RelativeToolTip": "views\\frmGereTiposTarefas.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:39:33.769Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "frmLogin.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmLogin.cs",
-              "RelativeDocumentMoniker": "views\\frmLogin.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmLogin.cs [Design]",
-              "RelativeToolTip": "views\\frmLogin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:52:20.662Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "frmGereUtilizadores.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmGereUtilizadores.cs",
-              "RelativeDocumentMoniker": "views\\frmGereUtilizadores.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmGereUtilizadores.cs",
-              "RelativeToolTip": "views\\frmGereUtilizadores.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCEAAABCAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:53:45.095Z",
+              "WhenOpened": "2025-06-20T19:45:45.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "frmGereUtilizadores.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmGereUtilizadores.cs",
-              "RelativeDocumentMoniker": "views\\frmGereUtilizadores.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmGereUtilizadores.cs [Design]",
-              "RelativeToolTip": "views\\frmGereUtilizadores.cs [Design]",
+              "Title": "frmGereTiposTarefas.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmGereTiposTarefas.cs",
+              "RelativeDocumentMoniker": "views\\frmGereTiposTarefas.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\views\\frmGereTiposTarefas.cs [Design]",
+              "RelativeToolTip": "views\\frmGereTiposTarefas.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:38:15.905Z",
+              "WhenOpened": "2025-06-20T19:18:59.984Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ControllerTipoTarefa.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\Controllers\\ControllerTipoTarefa.cs",
+              "RelativeDocumentMoniker": "Controllers\\ControllerTipoTarefa.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\Controllers\\ControllerTipoTarefa.cs",
+              "RelativeToolTip": "Controllers\\ControllerTipoTarefa.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T19:23:38.273Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "frmKanban.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmKanban.cs",
-              "RelativeDocumentMoniker": "views\\frmKanban.cs",
-              "ToolTip": "C:\\Users\\andre\\Downloads\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\views\\frmKanban.cs [Design]",
-              "RelativeToolTip": "views\\frmKanban.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:38:14.656Z",
-              "EditorCaption": " [Design]"
+              "Title": "dbo.Utilizadors.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/iTasks.Basededados/True/SqlTable/dbo.Utilizadors.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/iTasks.Basededados/True/SqlTable/dbo.Utilizadors.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-06-20T19:03:23.36Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TipoTarefa.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\TipoTarefa.cs",
-              "RelativeDocumentMoniker": "..\\..\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\TipoTarefa.cs",
-              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\TipoTarefa.cs",
-              "RelativeToolTip": "..\\..\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\TipoTarefa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:40:19.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Utilizador.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Utilizador.cs",
-              "RelativeDocumentMoniker": "..\\..\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Utilizador.cs",
-              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Utilizador.cs",
-              "RelativeToolTip": "..\\..\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Utilizador.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:40:19.114Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Tarefa.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Tarefa.cs",
-              "RelativeDocumentMoniker": "..\\..\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Tarefa.cs",
-              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Tarefa.cs",
-              "RelativeToolTip": "..\\..\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Tarefa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:40:18.883Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "Basededados.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Basededados.cs",
-              "RelativeDocumentMoniker": "..\\..\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Basededados.cs",
-              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Basededados.cs",
-              "RelativeToolTip": "..\\..\\OneDrive\\\u00C1rea de Trabalho\\trabalho_da\\DA-ProjectV2\\Models\\Basededados.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\models\\Basededados.cs",
+              "RelativeDocumentMoniker": "models\\Basededados.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\\u00C1rea de Trabalho\\Trabalho_Novo_DA\\models\\Basededados.cs",
+              "RelativeToolTip": "models\\Basededados.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:40:18.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T13:43:56.72Z"
             }
           ]
         }

@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers"
   ],
-  "SelectedNode": "\\iTasks.sln",
+  "SelectedNode": "\\Controllers\\ControllerUtilizadores.cs",
   "PreviewInSolutionExplorer": false
 }

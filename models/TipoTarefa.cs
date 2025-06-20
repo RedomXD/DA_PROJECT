@@ -10,5 +10,10 @@ namespace iTasks
     {
         public int TipoTarefaId { get; set; }
         public string TipoTarefaDesc { get; set; }
+
+        public override string ToString()
+        {
+            return $"{TipoTarefaDesc}";
+        }
     }
 }
