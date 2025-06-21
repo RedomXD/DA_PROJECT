@@ -90,7 +90,7 @@ namespace iTasks
                 }
 
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                this.Hide();  // esconder em vez de fechar
             }
             else
             {

@@ -242,8 +242,6 @@ namespace iTasks
 
         private void btNova_Click_1(object sender, EventArgs e)
         {
-
-            //if (utilizadorLogado is not Gestor gestor)
             if (!(utilizadorLogado is Gestor gestor))
             {
                 MessageBox.Show("Apenas gestores podem criar tarefas.");
@@ -252,11 +250,8 @@ namespace iTasks
 
             using (var db = new Basededados())
             {
-
-                // verificar os Programadores na Base de dados, e se estes estão associados a um Gestor
-
-                var programador = db.Programadors
-                    .FirstOrDefault(p => p.Gestor.Id == gestor.Id);
+                // Buscar o primeiro programador associado ao gestor
+                var programador = db.Programadors.FirstOrDefault(p => p.GestorID == gestor.Id);
 
                 if (programador == null)
                 {
@@ -264,7 +259,7 @@ namespace iTasks
                     return;
                 }
 
-
+                // Buscar o primeiro tipo de tarefa existente
                 var tipoTarefa = db.tipoTarefas.FirstOrDefault();
 
                 if (tipoTarefa == null)
@@ -273,29 +268,38 @@ namespace iTasks
                     return;
                 }
 
+                // Criar a nova tarefa com os IDs corretos
                 var novaTarefa = new Tarefa
                 {
                     Descricao = "Nova tarefa",
                     EstadoAtual = Tarefa.estadoatual.todo,
                     DataPrevistaInicio = DateTime.Now,
                     DataPrevistaFim = DateTime.Now.AddDays(7),
-                    //DataRealInicio = DateTime.Now,
-                    //DataRealFim = DateTime.Now,
                     DataCreation = DateTime.Now,
                     Ordem = 1,
-                    Programador = programador,
-                    Gestor = gestor,
-                    TipoTarefa = tipoTarefa
+                    ProgramadorId = programador.Id,
+                    GestorID = gestor.Id,
+                    TipoTarefaId = tipoTarefa.TipoTarefaId
                 };
 
+                // Tentar guardar a tarefa na base de dados
                 db.Tarefas.Add(novaTarefa);
-                db.SaveChanges();
 
-                MessageBox.Show("Tarefa adicionada com sucesso!");
+                try
+                {
+                    db.SaveChanges();
+                    MessageBox.Show("Tarefa adicionada com sucesso!");
+                }
+                catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+                {
+                    MessageBox.Show("Erro ao gravar tarefa: " + ex.InnerException?.InnerException?.Message);
+                }
             }
 
             LoadTarefas();
         }
+
+
 
         private void btSetDoing_Click_1(object sender, EventArgs e)
         {
@@ -324,37 +328,79 @@ namespace iTasks
 
         private void btPrevisao_Click(object sender, EventArgs e)
         {
-
+            // POR FAZER
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Application.Exit();
         }
 
         private void exportarParaCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            using (var db = new Basededados())
+            {
+                var tarefas = db.Tarefas.Include(t => t.Programador).ToList();
 
+                var sb = new StringBuilder();
+                sb.AppendLine("Id,Descrição,Estado,Programador,Ordem");
+
+                foreach (var t in tarefas)
+                {
+                    sb.AppendLine($"{t.Id},\"{t.Descricao}\",{t.EstadoAtual},{t.Programador?.Nome},{t.Ordem}");
+                }
+
+                // Perguntar onde guardar
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "CSV Files (*.csv)|*.csv";
+                    sfd.FileName = "tarefas_export.csv";
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        System.IO.File.WriteAllText(sfd.FileName, sb.ToString(), Encoding.UTF8);
+                        MessageBox.Show("Exportação concluída com sucesso!", "Exportar CSV", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
 
+        // Toolstrip redirect
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var gereUtilizadores = new frmGereUtilizadores();
 
+            gereUtilizadores.Show();
+
+            this.Close();
         }
 
         private void gerirTiposDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var gereTiposTarefa = new frmGereTiposTarefas();
 
+            gereTiposTarefa.Show();
+
+            this.Close();
         }
 
         private void tarefasTerminadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var tarefaTerminadas = new frmConsultarTarefasConcluidas();
 
+            tarefaTerminadas.Show();
+
+            this.Close();
         }
 
         private void tarefasEmCursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var tarefaEmCurso = new frmConsultaTarefasEmCurso();
 
+            tarefaEmCurso.Show();
+
+            this.Close();
         }
 
 
