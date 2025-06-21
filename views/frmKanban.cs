@@ -275,6 +275,8 @@ namespace iTasks
                     EstadoAtual = Tarefa.estadoatual.todo,
                     DataPrevistaInicio = DateTime.Now,
                     DataPrevistaFim = DateTime.Now.AddDays(7),
+                    DataRealInicio = DateTime.Now,      // importante definir
+                    DataRealFim = DateTime.Now.AddDays(1), // importante definir
                     DataCreation = DateTime.Now,
                     Ordem = 1,
                     ProgramadorId = programador.Id,
