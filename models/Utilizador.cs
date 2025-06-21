@@ -32,6 +32,7 @@ namespace iTasks
 
         [Required]
         [Index(IsUnique = true)]
+        [MaxLength(100)]
         public string Username { get; set; }
 
         [Required]
