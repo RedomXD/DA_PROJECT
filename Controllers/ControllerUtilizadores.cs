@@ -111,7 +111,7 @@ namespace iTasks.Controllers
             // nao funfa XD
             using (var db = new Basededados())
             {
-                var gestor = db.Gestors.Include(g => g.Id).FirstOrDefault(g => g.Id == id);
+                var gestor = db.Gestors.FirstOrDefault(g => g.Id == id);
 
                 if (gestor == null)
                     throw new InvalidOperationException("Gestor não encontrado.");
