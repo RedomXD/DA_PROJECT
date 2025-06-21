@@ -23,7 +23,7 @@ namespace iTasks
             cbDepartamento.Items.AddRange(Enum.GetNames(typeof(Departamento)));
 
             cbNivelProg.Items.AddRange(Enum.GetNames(typeof(NivelExperiencia)));
-
+            AtualizarListas();
         }
 
         private void AtualizarListas()
@@ -247,7 +247,7 @@ namespace iTasks
                 // Desta forma fica mais simplificado os Valores a atribuir ao Programador para a base de dados
                 // Chama-se GestorAdicionar do ControllerUtilizadores e atribui por ordem os respetivos valores
                 Controllerutilizadores.ProgramadorAdicionar(
-                    txtNomeGestor.Text,
+                    txtNomeProg.Text,
                     txtUsernameProg.Text,
                     txtPasswordProg.Text,
                     nivel,
@@ -373,7 +373,7 @@ namespace iTasks
         }
 
 
-        // xd
+        // xd 
 
         private void cbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {

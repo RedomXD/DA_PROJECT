@@ -16,7 +16,7 @@ namespace iTasks
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGereTiposTarefas());
+            Application.Run(new frmLogin());
         }
     }
 }

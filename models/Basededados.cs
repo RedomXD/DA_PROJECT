@@ -33,7 +33,7 @@ namespace iTasks
                 .WithMany()
                 .HasForeignKey(t => t.ProgramadorId)
                 .WillCascadeOnDelete(false);
-    }
+        }
     }
 
 }

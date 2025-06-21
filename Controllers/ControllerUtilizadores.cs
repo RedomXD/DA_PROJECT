@@ -20,14 +20,26 @@ namespace iTasks.Controllers
             }
         }
 
-        public void ProgramadorAdicionar (string nome, string username, string palavra_passe, NivelExperiencia nivelExperiencia, Gestor gestor)
+        public void ProgramadorAdicionar(string nome, string username, string palavra_passe, NivelExperiencia nivelExperiencia, Gestor gestor)
         {
             using (var db = new Basededados())
             {
-                var programador = new Programador { Nome = nome, Username = username, Password = palavra_passe, NivelExperiencia = nivelExperiencia, Gestor = gestor};
+                // isto garante que temos gestor no context a dar fetch ao id
+                var gestorDb = db.Gestors.Find(gestor.Id);
 
-                db.Utilizadors.Attach(gestor);
-                db.Utilizadors.Add(programador);
+                if (gestorDb == null)
+                    throw new InvalidOperationException("Gestor associado não encontrado.");
+
+                var programador = new Programador
+                {
+                    Nome = nome,
+                    Username = username,
+                    Password = palavra_passe,
+                    NivelExperiencia = nivelExperiencia,
+                    Gestor = gestorDb
+                };
+
+                db.Programadors.Add(programador);
                 db.SaveChanges();
             }
         }
@@ -96,6 +108,7 @@ namespace iTasks.Controllers
 
         public void ApagarGestor(int id)
         {
+            // nao funfa XD
             using (var db = new Basededados())
             {
                 var gestor = db.Gestors.Include(g => g.Id).FirstOrDefault(g => g.Id == id);
