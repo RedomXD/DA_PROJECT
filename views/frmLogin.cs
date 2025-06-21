@@ -24,17 +24,21 @@ namespace iTasks
             InitializeComponent();
         }
 
-        private bool VerifyLogin(string username, string password)
+        private bool VerifyLogin(string username, string password, out Utilizador utilizador)
         {
+
+            utilizador = null;
+
             try
             {
                 using (var db = new Basededados())
                 {
                     // Procurar utilizador com username e password exatos
-                    var user = db.Utilizadors
+                    utilizador = db.Utilizadors
+                        .OfType<Utilizador>()
                         .SingleOrDefault(u => u.Username == username && u.Password == password);
 
-                    if (user == null)
+                    if (utilizador == null)
                     {
                         MessageBox.Show("Utilizador ou password inválidos.");
                         return false;
@@ -43,9 +47,9 @@ namespace iTasks
                     return true;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao tentar fazer login: " + e.Message);
+                MessageBox.Show("Erro ao tentar fazer login: " + ex.Message);
                 return false;
             }
         }
@@ -55,12 +59,35 @@ namespace iTasks
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
-            if (VerifyLogin(username, password))
+            //Validação dos Campos Username e Password na TextBox
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Login efetuado com sucesso");
+                MessageBox.Show("Por favor, preencha todos os campos.");
+                return;
+            }
 
-                frmKanban kanban = new frmKanban();
-                kanban.Show();
+            // Validações para o Login do Utilizador
+            if (VerifyLogin(username, password, out Utilizador utilizador))
+            {
+                //Login efetuado com sucesso
+                MessageBox.Show("Login efetuado com sucesso!!");
+
+                //Agora é necessário Diferenciar entre Gestor e Programador
+                if (utilizador is Gestor gestor)
+                {
+                    frmKanban kanban = new frmKanban(gestor); // Inicia o kanban para o Gestor
+                    kanban.Show();
+                }
+                else if (utilizador is Programador programador)
+                {
+                    frmKanban kanban = new frmKanban(programador); // Inicia o kanban para Programador
+                    kanban.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Tipo de utilizador não reconhecido.");
+                    return;
+                }
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -75,7 +102,7 @@ namespace iTasks
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            txtUsername.Focus();
         }
     }
 }

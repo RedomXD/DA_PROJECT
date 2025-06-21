@@ -6,17 +6,75 @@ using System.Threading.Tasks;
 
 namespace iTasks.Controllers
 {
-    class ControllerTipoTarefa
+    public class ControllerTipoTarefa
     {
-        public void TipoTarefaAdicionar(string descricao)
+        public bool TipoTarefaAdicionar(string descricao)
+        {
+            // Validação
+            if (string.IsNullOrWhiteSpace(descricao))
+            {
+                //throw new ArgumentException("A descrição não pode estar vazia.");
+                return false;
+            }
+
+            using (var db = new Basededados())
+            {
+                // Validaçoa se ja existe a tipitarefa
+                bool exist = db.tipoTarefas.Any(t => t.TipoTarefaDesc == descricao);
+                if (exist)
+                {
+                    //throw new InvalidOperationException("Tipo de Tarefa já existe.");
+                    return false;
+                }
+
+                var tipoTarefa = new TipoTarefa {TipoTarefaDesc = descricao};
+                db.tipoTarefas.Add(tipoTarefa);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool AtualizarTipoTarefa(int id, string novaDescricao)
+        {
+
+            if (string.IsNullOrWhiteSpace(novaDescricao))
+            {
+                return false;
+            }
+            
+
+            using (var db = new Basededados())
+            {
+                var tipoTarefa = db.tipoTarefas.FirstOrDefault(t => t.TipoTarefaId == id);
+                if (tipoTarefa == null)
+                {
+                    return false;
+                }
+
+                tipoTarefa.TipoTarefaDesc = novaDescricao;
+                db.SaveChanges();
+
+                return true;
+            }
+        }
+
+        public bool ApagarTipoTarefa(int id)
         {
             using (var db = new Basededados())
             {
-                var TipoTarefa = new TipoTarefa {TipoTarefaDesc = descricao};
-                db.tipoTarefas.Add(TipoTarefa);
+                var tipoTarefa = db.tipoTarefas.FirstOrDefault(t => t.TipoTarefaId == id);
+                if (tipoTarefa == null)
+                {
+                    return false;
+                }
+
+                db.tipoTarefas.Remove(tipoTarefa);
                 db.SaveChanges();
+
+                return true;
             }
         }
+
         public List<TipoTarefa> ListaTipoTarefa()
         {
             List<TipoTarefa> ListaTipoTarefa = new List<TipoTarefa>();

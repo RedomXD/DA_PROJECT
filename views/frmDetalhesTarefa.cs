@@ -97,5 +97,10 @@ namespace iTasks
         {
             this.Close();
         }
+
+        private void btGravar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

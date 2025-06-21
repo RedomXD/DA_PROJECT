@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace iTasks
 {
@@ -22,9 +24,17 @@ namespace iTasks
 
     public class Utilizador
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required]
         public string Nome { get; set; }
+
+        [Required]
+        [Index(IsUnique = true)]
         public string Username { get; set; }
+
+        [Required]
         public string Password { get; set; }
     }
 
@@ -42,6 +52,9 @@ namespace iTasks
     public class Programador : Utilizador
     {
         public NivelExperiencia NivelExperiencia { get; set; }
+        public int GestorID { get; set; }
+
+        [ForeignKey("GestorID")]
         public Gestor Gestor { get; set; }
 
         public override string ToString()

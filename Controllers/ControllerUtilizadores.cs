@@ -31,6 +31,18 @@ namespace iTasks.Controllers
                 db.SaveChanges();
             }
         }
+
+
+        //Vericação de Username Único , Rule 3 do enunciado
+        public bool UsernameExist(string username)
+        {
+            using (var db = new Basededados())
+            {
+                return db.Utilizadors.Any(u => u.Username == username);
+            }
+        }
+
+
         public List<Gestor> ListarGestores()
         {
             List<Gestor> ListaGestores = new List<Gestor>();
@@ -58,6 +70,83 @@ namespace iTasks.Controllers
                 return ListaProgramador;
             }
         }
+
+
+
+        //Novas funçoes Atualizar e Apagar conforme o que era pedido pelo CRUD
+        // Para o Gestor
+        public void AtualizarGestor(int id, string nome, string username, string password, Departamento departamento, bool gereUtilizadores)
+        {
+            using (var db = new Basededados())
+            {
+                var gestor = db.Gestors.Find(id);
+
+                if (gestor == null)
+                    throw new InvalidOperationException("Gestor não encontrado.");
+
+                gestor.Nome = nome;
+                gestor.Username = username;
+                gestor.Password = password;
+                gestor.Departamento = departamento;
+                gestor.GereUtilizadores = gereUtilizadores;
+
+                db.SaveChanges();
+            }
+        }
+
+        public void ApagarGestor(int id)
+        {
+            using (var db = new Basededados())
+            {
+                var gestor = db.Gestors.Include(g => g.Id).FirstOrDefault(g => g.Id == id);
+
+                if (gestor == null)
+                    throw new InvalidOperationException("Gestor não encontrado.");
+
+                db.Utilizadors.Remove(gestor);
+                db.SaveChanges();
+            }
+        }
+
+
+        // Agora para o Programador
+        public void AtualizarProgramador(int id, string nome, string username, string password, NivelExperiencia nivel, Gestor gestor)
+        {
+            using (var db = new Basededados())
+            {
+                var programador = db.Programadors.Find(id);
+
+                if (programador == null)
+                    throw new InvalidOperationException("Programador não encontrado.");
+
+                programador.Nome = nome;
+                programador.Username = username;
+                programador.Password = password;
+                programador.NivelExperiencia = nivel;
+
+                // Anexar o gestor para evitar conflito de tracking
+                db.Utilizadors.Attach(gestor);
+                programador.Gestor = gestor;
+
+                db.SaveChanges();
+            }
+        }
+
+        public void ApagarProgramador(int id)
+        {
+            using (var db = new Basededados())
+            {
+                var programador = db.Programadors.FirstOrDefault(p => p.Id == id);
+
+                if (programador == null)
+                    throw new InvalidOperationException("Programador não encontrado.");
+
+                db.Utilizadors.Remove(programador);
+                db.SaveChanges();
+            }
+        }
+
+
     }
 
 }
