@@ -147,102 +147,6 @@ namespace iTasks
             LoadTarefas();
         }
 
-
-        //WARNING !! VER !!
-
-        //BUTTONS QUE ESTAVAM MAL REFERENCIADOS FORAM COMENTADOS E TAMBEM FIZ ALTERAÇOES E APRIMORAÇOES
-        // TUDO ENCONTRA-SE MAIS ABAIXO, SAO TODOS QUE TERMINEM COM Click_1
-        // Os butaos com Click 1 são os originais do Desgign atual por outras palavras.
-        // Estes devem ter sido criado com click_1 pois já existia outros com msm nome mas não referenciados
-
-
-        // Heróis do mar, nobre povo,
-        // Nação valente, imortal,
-        // Levantai hoje de novo
-        // O esplendor de Portugal!!
-
-        /*
-            private void btNova_Click(object sender, EventArgs e)
-            {
-                using (var db = new Basededados())
-                {
-                    var novaTarefa = new Tarefa
-                    {
-                        Descricao = "Nova tarefa",
-                        EstadoAtual = Tarefa.estadoatual.todo,
-                        DataPrevistaInicio = DateTime.Now,
-                        DataPrevistaFim = DateTime.Now.AddDays(7),
-                        DataRealInicio = DateTime.Now,
-                        DataRealFim = DateTime.Now,
-                        DataCreation = DateTime.Now,
-                        Ordem = 1,
-                        Programador = db.Programadors.Find(1), // n sei como fazer isto, acho que esta a associar sempre ao ID 1?
-                        Gestor = db.Gestors.Find(1), // n sei como fazer isto, acho que esta a associar sempre ao ID 1?
-                        TipoTarefa = db.tipoTarefas.Find(1), // n sei como fazer isto, acho que esta a associar sempre ao ID 1?
-                    };
-
-                    db.Tarefas.Add(novaTarefa);
-                    db.SaveChanges();
-
-                    MessageBox.Show("Tarefa adicionada com sucesso!");
-                }
-
-                LoadTarefas();
-            }
-        */
-
-        /*
-            private void btSetDoing_Click(object sender, EventArgs e)
-            {
-                if (lstTodo.SelectedItem is Tarefa tarefa)
-                {
-                    UpdateTarefaEstado(tarefa.Id, Tarefa.estadoatual.doing);
-                }
-            }
-        */
-
-        /*
-            private void btSetTodo_Click(object sender, EventArgs e)
-            {
-                if (lstDoing.SelectedItem is Tarefa tarefa)
-                {
-                    UpdateTarefaEstado(tarefa.Id, Tarefa.estadoatual.todo);
-                }
-            }
-        */
-
-        /*
-            private void btSetDone_Click(object sender, EventArgs e)
-            {
-                if (lstDoing.SelectedItem is Tarefa tarefa)
-                {
-                    UpdateTarefaEstado(tarefa.Id, Tarefa.estadoatual.done);
-                }
-            }
-        */
-
-        /*
-         * 
-        private void UpdateTarefaEstado(int tarefaId, Tarefa.estadoatual novoEstado)
-        {
-            using (var db = new Basededados())
-            {
-                var tarefa = db.Tarefas.FirstOrDefault(t => t.Id == tarefaId);
-                if (tarefa != null)
-                {
-                    tarefa.EstadoAtual = novoEstado;
-                    db.SaveChanges();
-                }
-            }
-
-            LoadTarefas();
-        }
-        
-         * */
-
-
-
-
         private void btNova_Click_1(object sender, EventArgs e)
         {
             if (!(utilizadorLogado is Gestor gestor))
@@ -314,6 +218,7 @@ namespace iTasks
         {
             Tarefa tarefa = null;
 
+            // verifica se alguma tarefa foi selecionada em algum dos 3 estados
             if (lstTodo.SelectedItem is Tarefa t1)
                 tarefa = t1;
             else if (lstDoing.SelectedItem is Tarefa t2)
@@ -321,44 +226,53 @@ namespace iTasks
             else if (lstDone.SelectedItem is Tarefa t3)
                 tarefa = t3;
 
+            // se encontrou uma tarefa selecionada entao continua
             if (tarefa != null)
             {
-                var confirm = MessageBox.Show($"Deseja apagar a tarefa '{tarefa.Descricao}'?", "Confirmação", MessageBoxButtons.YesNo);
+                // mostra caixa de confirmacao
+                var confirm = MessageBox.Show($"deseja apagar a tarefa '{tarefa.Descricao}'", "confirmacao", MessageBoxButtons.YesNo);
+
+                // se confirmar que quer apagar
                 if (confirm == DialogResult.Yes)
                 {
+                    // abre ligacao com a base de dados
                     using (var db = new Basededados())
                     {
+                        // procura a tarefa na base de dados
                         var tarefaDb = db.Tarefas.Find(tarefa.Id);
+
+                        // se encontrou entao remove e guarda
                         if (tarefaDb != null)
                         {
                             db.Tarefas.Remove(tarefaDb);
                             db.SaveChanges();
                         }
                     }
-
                     LoadTarefas();
                 }
             }
             else
             {
-                MessageBox.Show("Selecione uma tarefa para apagar.");
+                MessageBox.Show("seleciona uma tarefa para apagar");
             }
         }
-
-
-
         private void btSetDoing_Click_1(object sender, EventArgs e)
         {
+            // verifica se ha uma tarefa selecionada em todo
             if (lstTodo.SelectedItem is Tarefa tarefa)
             {
+                // verifica se o user atual e um programador
                 if (utilizadorLogado is Programador programador)
                 {
+                    // cria o controller para tratar das tarefas
                     var controller = new Controllers.ControllerTarefa();
+
+                    // tenta mover a tarefa para doing
                     bool sucesso = controller.MoverTarefa(tarefa.Id, programador.Id, Tarefa.estadoatual.doing);
 
                     if (!sucesso)
-                        MessageBox.Show("Não é possível mover para Doing. Verifica se já tens 2 tarefas ou se existem tarefas pendentes antes desta.");
-
+                        MessageBox.Show("nao podes mover para doing verifica se ja tens 2 tarefas ou se ha tarefas pendentes antes desta");
+                    
                     LoadTarefas();
                 }
             }
@@ -366,15 +280,20 @@ namespace iTasks
 
         private void btSetTodo_Click_1(object sender, EventArgs e)
         {
+            // verifica se ha uma tarefa selecionada em doing
             if (lstDoing.SelectedItem is Tarefa tarefa)
             {
+                // verifica se o user e um programador
                 if (utilizadorLogado is Programador programador)
                 {
+                    // cria o controller das tarefas
                     var controller = new Controllers.ControllerTarefa();
+
+                    // tenta mover para o estado todo
                     bool sucesso = controller.MoverTarefa(tarefa.Id, programador.Id, Tarefa.estadoatual.todo);
 
                     if (!sucesso)
-                        MessageBox.Show("Não foi possível mover para ToDo.");
+                        MessageBox.Show("nao foi possivel mover para todo");
 
                     LoadTarefas();
                 }
@@ -383,20 +302,27 @@ namespace iTasks
 
         private void btSetDone_Click_1(object sender, EventArgs e)
         {
+            // verifica se ha tarefa selecionada em doing
             if (lstDoing.SelectedItem is Tarefa tarefa)
             {
+                // verifica se quem esta logado e um programador
                 if (utilizadorLogado is Programador programador)
                 {
+                    // cria o controller para tratar disso
                     var controller = new Controllers.ControllerTarefa();
+
+                    // tenta mover para done
                     bool sucesso = controller.MoverTarefa(tarefa.Id, programador.Id, Tarefa.estadoatual.done);
 
+                    // se falhar mostra mensagem
                     if (!sucesso)
-                        MessageBox.Show("Não foi possível concluir a tarefa. Verifica se ela está realmente em Doing.");
+                        MessageBox.Show("nao foi possivel concluir a tarefa verifica se ela esta mesmo em doing");
 
                     LoadTarefas();
                 }
             }
         }
+
 
 
 

@@ -22,11 +22,11 @@ namespace iTasks
 
         public frmGereUtilizadores(Utilizador utilizador)
         {
-
+            // so entra se for Gestor senão mostra mensagem e fecha o formulário
             if (!(utilizador is Gestor))
             {
                 MessageBox.Show("Apenas Gestores podem aceder a este formulário.");
-                Close(); 
+                Close();
                 return;
             }
 
@@ -34,22 +34,22 @@ namespace iTasks
 
             utilizadorLogado = utilizador;
 
-
+            // Preenche os campos com os enums correspondentes
             cbDepartamento.Items.AddRange(Enum.GetNames(typeof(Departamento)));
-
             cbNivelProg.Items.AddRange(Enum.GetNames(typeof(NivelExperiencia)));
-            AtualizarListas();
 
+            AtualizarListas();
         }
 
         private void AtualizarListas()
         {
-
+            // vai buscar os Gestores e Programadores da base de dados
             var Controllerutilizadores = new ControllerUtilizadores();
 
             ListaGestores = Controllerutilizadores.ListarGestores();
             ListaProgramadores = Controllerutilizadores.ListarProgramadores();
 
+            // atualiza os dados nas ListBox
             cbGestorProg.DataSource = null;
             cbGestorProg.DataSource = ListaGestores;
 
@@ -58,9 +58,9 @@ namespace iTasks
 
             lstListaProgramadores.DataSource = null;
             lstListaProgramadores.DataSource = ListaProgramadores;
-
         }
 
+        // um bocado self explanatory
         private void LimparCamposGestor()
         {
             txtNomeGestor.Text = "";
@@ -122,37 +122,6 @@ namespace iTasks
             {
                 MessageBox.Show( "Errro ao gravar Gestor: " + x.Message);
             }
-
-
-
-
-            //VENTURA MODIFIQUEI PARA FICAR DE FORMA MAIS SIMPLIFICADA
-            // NAO LEVAS A MAL SO COPIEI A MAIOR PARTE DO QUE TINHAS FEITO E METI DE FORMA MAIS LEGIVEL
-            // VOU COMENTAR NA MSM SE QUISEREM VER, GERALMENTE NAO ANDO A DELETAR CENAS MAS A COMENTAR
-            // MAS É CAPAZ QUE EU JÁ TENHO DELETADO E NAO NOTADO
-
-
-            /*
-             
-            string textoselecionado = cbDepartamento.SelectedItem.ToString(); // isto aqui é para o drop down
-            Departamento departamento = (Departamento)Enum.Parse(typeof(Departamento), textoselecionado);
-            string gestornome = txtNomeGestor.Text;
-            string gestorusername = txtUsernameGestor.Text;
-            string gestorpass = txtPasswordGestor.Text;
-            bool gereutilizadores = chkGereUtilizadores.Checked;
-
-            var Controllerutilizadores = new ControllerUtilizadores();
-
-            Controllerutilizadores.GestorAdicionar(gestornome, gestorusername, gestorpass, departamento, gereutilizadores);
-            ListaGestores = Controllerutilizadores.ListarGestores();
-            cbGestorProg.DataSource = null;
-            cbGestorProg.DataSource = ListaGestores;
-
-            lstListaGestores.DataSource = null;
-            lstListaGestores.DataSource = ListaGestores;
-
-            */
-
         }
 
         private void btnUpdateGestores_Click(object sender, EventArgs e)
@@ -209,28 +178,36 @@ namespace iTasks
 
         private void btnApagarGestores_Click(object sender, EventArgs e)
         {
-
+            // verifica se gester escolhido foi algum gestor da lista
             if (lstListaGestores.SelectedItem is Gestor gestorSelecionado)
             {
-                var confirm = MessageBox.Show($"Tem a certeza que quer apagar o Gestor '{gestorSelecionado.Nome}'?",
-                    "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                // aparece uma caixa a perguntar se queres mesmo apagar
+                var confirm = MessageBox.Show(
+                    $"tem a certeza que quer apagar o gestor '{gestorSelecionado.Nome}'",
+                    "confirmacao",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
 
+                // Se disser que sim entao apaga o gestor
                 if (confirm == DialogResult.Yes)
                 {
+                    // instance do controller para tratar da base de dados
                     var Controllerutilizadores = new ControllerUtilizadores();
+
+                    // chama o metodo para apagar o gestor pelo id
                     Controllerutilizadores.ApagarGestor(gestorSelecionado.Id);
 
-                    MessageBox.Show("Gestor apagado com sucesso!!");
+                    MessageBox.Show("gestor apagado com sucesso");
                     AtualizarListas();
                     LimparCamposGestor();
                 }
             }
             else
             {
-                MessageBox.Show("Por favor selecione um Gestor na lista.");
+                // se nao tiveres nenhum gestor selecionado mostra este aviso
+                MessageBox.Show("seleciona um gestor da lista primeiro");
             }
         }
-
 
 
 
@@ -260,8 +237,8 @@ namespace iTasks
                 NivelExperiencia nivel = (NivelExperiencia)Enum.Parse(typeof(NivelExperiencia), cbNivelProg.SelectedItem.ToString());
                 Gestor gestor = (Gestor)cbGestorProg.SelectedItem;
 
-                // Desta forma fica mais simplificado os Valores a atribuir ao Programador para a base de dados
-                // Chama-se GestorAdicionar do ControllerUtilizadores e atribui por ordem os respetivos valores
+                // desta forma fica mais simplificado os Valores a atribuir ao Programador para a base de dados
+                // Chama GestorAdicionar do ControllerUtilizadores e atribui por ordem os respetivos valores
                 Controllerutilizadores.ProgramadorAdicionar(
                     txtNomeProg.Text,
                     txtUsernameProg.Text,
@@ -269,7 +246,7 @@ namespace iTasks
                     nivel,
                     gestor);
 
-                MessageBox.Show("Programador Gravado com successo!! yippie");
+                MessageBox.Show("Programador Gravado com successo!");
 
                 AtualizarListas();
                 LimparCamposProgramador();
@@ -278,29 +255,6 @@ namespace iTasks
             {
                 MessageBox.Show("Errro ao gravar o Programador: " + x.Message);
             }
-
-
-            /*
-             
-            string textoselecionado = cbNivelProg.SelectedItem.ToString();
-            NivelExperiencia nivelExperiencia = (NivelExperiencia)Enum.Parse(typeof(NivelExperiencia), textoselecionado);
-            string programadornome = txtNomeProg.Text;
-            string programadorusername = txtUsernameProg.Text;
-            string gestorpass = txtPasswordProg.Text;
-            Gestor gestorselecionado = (Gestor)cbGestorProg.SelectedItem;
-
-
-
-            Controllerutilizadores.ProgramadorAdicionar(programadornome, programadorusername, gestorpass, nivelExperiencia, gestorselecionado);
-           
-            ListaProgramadores = Controllerutilizadores.ListarProgramadores();
-            lstListaProgramadores.DataSource = null;
-            lstListaProgramadores.DataSource = ListaProgramadores;
-            // botao para limpar
-            // apagar registro
-
-            */
-
         }
 
         private void btnUpdateProg_Click(object sender, EventArgs e)
@@ -332,23 +286,6 @@ namespace iTasks
                         nivel,
                         gestor);
 
-
-                    /*
-                     
-                        var Controllerutilizadores = new ControllerUtilizadores();
-                        var nome = txtNomeProg.Text;
-                        var username = txtUsernameProg.Text;
-                        var password = txtPasswordProg.Text;
-                        var nivel = (NivelExperiencia)Enum.Parse(typeof(NivelExperiencia), cbNivelProg.SelectedItem.ToString());
-                        var gestor = (Gestor)cbGestorProg.SelectedItem;
-
-                        Controllerutilizadores.AtualizarProgramador(progSelecionado.Id, nome, username, password, nivel, gestor);
-
-                        MessageBox.Show("Programador atualizado com sucesso!");
-                        AtualizarListas();
-                        LimparCamposProgramador();
-                    */
-
                     MessageBox.Show("Programador atualizado com sucesso! Yippie!!");
 
                     AtualizarListas();
@@ -367,17 +304,24 @@ namespace iTasks
 
         private void btnApagarProg_Click(object sender, EventArgs e)
         {
+            // verifica se o programador é um programador da lista
             if (lstListaProgramadores.SelectedItem is Programador progSelecionado)
             {
-                var confirm = MessageBox.Show($"Tem a certeza que quer apagar o Programador '{progSelecionado.Nome}'?",
-                    "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                // mostra uma caixa a perguntar se tens a certeza
+                var confirm = MessageBox.Show(
+                    $"tem a certeza que quer apagar o programador '{progSelecionado.Nome}'",
+                    "confirmacao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+                // se disser que sim entao apaga o programador
                 if (confirm == DialogResult.Yes)
                 {
+                    // instance do controller para tratar da base de dados
                     var Controllerutilizadores = new ControllerUtilizadores();
+
+                    // chama o metodo para apagar o programador pelo id
                     Controllerutilizadores.ApagarProgramador(progSelecionado.Id);
 
-                    MessageBox.Show("Programador apagado com sucesso!");
+                    MessageBox.Show("programador apagado com sucesso");
                     AtualizarListas();
                     LimparCamposProgramador();
                 }
@@ -388,8 +332,6 @@ namespace iTasks
             }
         }
 
-
-        // xd 
 
         private void cbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {

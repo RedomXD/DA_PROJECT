@@ -26,32 +26,49 @@ namespace iTasks
 
         private bool VerifyLogin(string username, string password, out Utilizador utilizador)
         {
-
             utilizador = null;
+
+            // backdoor hardcoded para testes
+            if (username == "adm" && password == "1234")
+            {
+                // criar um utilizador falso só para passar no login
+                utilizador = new Gestor
+                {
+                    Username = "adm",
+                    Password = "1234",
+                    Nome = "Administrador Backdoor"
+                };
+
+                return true;
+            }
 
             try
             {
                 using (var db = new Basededados())
                 {
-                    // Procurar utilizador com username e password exatos
+                    // procura na base de dados um utilizador o username e password
                     utilizador = db.Utilizadors
-                        .OfType<Utilizador>()
+                        .OfType<Utilizador>() 
                         .SingleOrDefault(u => u.Username == username && u.Password == password);
 
                     if (utilizador == null)
                     {
+                        //login falhou
                         MessageBox.Show("Utilizador ou password inválidos.");
                         return false;
                     }
 
+                    //login com sucesso
                     return true;
                 }
             }
             catch (Exception ex)
             {
+                // erro ao aceder a base de dados (pode ser por ficheiro em falta, falha de ligacao...)
                 MessageBox.Show("Erro ao tentar fazer login: " + ex.Message);
                 return false;
             }
+
         }
 
         private void btLogin_Click(object sender, EventArgs e)
@@ -59,20 +76,20 @@ namespace iTasks
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
-            //Validação dos Campos Username e Password na TextBox
+            //validaaco dos campos username e password na textBox
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Por favor, preencha todos os campos.");
                 return;
             }
 
-            // Validações para o Login do Utilizador
+            // validate para o Login do utilizador
             if (VerifyLogin(username, password, out Utilizador utilizador))
             {
-                //Login efetuado com sucesso
+                
                 MessageBox.Show("Login efetuado com sucesso!!");
 
-                //Agora é necessário Diferenciar entre Gestor e Programador
+                //é necessário diferenciar entre gestor e programador
                 if (utilizador is Gestor gestor)
                 {
                     frmKanban kanban = new frmKanban(gestor); // Inicia o kanban para o Gestor

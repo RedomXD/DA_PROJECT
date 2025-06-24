@@ -12,51 +12,53 @@ namespace iTasks
 {
     public partial class frmDetalhesTarefa : Form
     {
+        // id da tarefa a editar/ver
         private int _tarefaId;
+
         public frmDetalhesTarefa(int tarefaId)
         {
             InitializeComponent();
             _tarefaId = tarefaId;
         }
 
-
-
+        // quando o form carrega
         private void frmDetalhesTarefa_Load(object sender, EventArgs e)
         {
             using (var db = new Basededados())
             {
+                // vai buscar a tarefa pelo id
                 var tarefa = db.Tarefas.Find(_tarefaId);
                 if (tarefa == null)
                 {
-                    MessageBox.Show("Tarefa não encontrada.");
+                    MessageBox.Show("Tarefa nao encontrada.");
                     this.Close();
                     return;
                 }
 
-                // Textboxes
+                // mete dados nos textboxes
                 txtId.Text = tarefa.Id.ToString();
-                //txtDataRealini.Text = tarefa.DataRealInicio.ToString("yyyy-MM-dd");
-                //txtdataRealFim.Text = tarefa.DataRealFim.ToString("yyyy-MM-dd");
+
+                // datas reais podem ser null, entao mete "" se for o caso
                 txtDataRealini.Text = tarefa.DataRealInicio?.ToString("yyyy-MM-dd") ?? "";
                 txtdataRealFim.Text = tarefa.DataRealFim?.ToString("yyyy-MM-dd") ?? "";
-                // Alterei acima - para que este esteja adaptado para ser opcional e caso o valor for null retorna string vazia ""
+
                 txtEstado.Text = tarefa.EstadoAtual.ToString();
                 txtDataCriacao.Text = tarefa.DataCreation.ToString("yyyy-MM-dd");
                 txtDesc.Text = tarefa.Descricao;
                 txtOrdem.Text = tarefa.Ordem.ToString();
                 txtStoryPoints.Text = tarefa.StoryPoints.ToString();
 
-                // Calendars
+                // mete datas previstas nos calendarios
                 dtInicio.Value = tarefa.DataPrevistaInicio;
                 dtFim.Value = tarefa.DataPrevistaFim;
 
-                // Populate dropdowns
+                // dropdown do tipo de tarefa
                 cbTipoTarefa.DataSource = db.Set<TipoTarefa>().ToList();
                 cbTipoTarefa.DisplayMember = "TipoTarefaName";
                 cbTipoTarefa.ValueMember = "TipoTarefaId";
                 cbTipoTarefa.SelectedValue = tarefa.TipoTarefaId;
 
-                // Example: Load static programador list
+                // dropdown do programador
                 cbProgramador.DataSource = db.Programadors
                     .Select(p => new { p.Id, p.Nome })
                     .ToList();
@@ -66,28 +68,33 @@ namespace iTasks
             }
         }
 
-
-
+        // botao gravar - guarda as alteracoes feitas no form
         private void btGravar_Click_1(object sender, EventArgs e)
         {
             using (var db = new Basededados())
             {
+                // volta a buscar a tarefa pelo id
                 var tarefa = db.Tarefas.Find(_tarefaId);
                 if (tarefa == null)
                 {
-                    MessageBox.Show("Tarefa não encontrada.");
+                    MessageBox.Show("Tarefa nao encontrada.");
                     return;
                 }
 
-                // Update fields from UI
-                tarefa.DataRealInicio = string.IsNullOrWhiteSpace(txtDataRealini.Text)  // Preciso ver melhor
+                // atualiza os campos com os valores do form
+                tarefa.DataRealInicio = string.IsNullOrWhiteSpace(txtDataRealini.Text)
                     ? (DateTime?)null
                     : DateTime.Parse(txtDataRealini.Text);
-                tarefa.DataRealFim = string.IsNullOrWhiteSpace(txtdataRealFim.Text)  // como havia mudado os DateTime para opcional
-                    ? (DateTime?)null                                                // para assim parar com os erros
+
+                tarefa.DataRealFim = string.IsNullOrWhiteSpace(txtdataRealFim.Text)
+                    ? (DateTime?)null
                     : DateTime.Parse(txtdataRealFim.Text);
+
                 tarefa.Descricao = txtDesc.Text;
-                tarefa.EstadoAtual = (Tarefa.estadoatual)Enum.Parse(typeof(Tarefa.estadoatual), txtEstado.Text); // mudei o parse aqui 
+
+                // converte o texto do estado pra enum
+                tarefa.EstadoAtual = (Tarefa.estadoatual)Enum.Parse(typeof(Tarefa.estadoatual), txtEstado.Text);
+
                 tarefa.DataPrevistaInicio = dtInicio.Value;
                 tarefa.DataPrevistaFim = dtFim.Value;
                 tarefa.Ordem = int.Parse(txtOrdem.Text);
@@ -95,17 +102,18 @@ namespace iTasks
                 tarefa.TipoTarefaId = (int)cbTipoTarefa.SelectedValue;
                 tarefa.ProgramadorID = (int)cbProgramador.SelectedValue;
 
+                // guarda no db
                 db.SaveChanges();
-                MessageBox.Show("Alterações salvas com sucesso!");
+
+                MessageBox.Show("Alteracoes salvas com sucesso!");
                 this.Close();
             }
-
         }
 
+        // sair
         private void btFechar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }
