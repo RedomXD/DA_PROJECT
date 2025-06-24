@@ -19,7 +19,9 @@ namespace iTasks
             _tarefaId = tarefaId;
         }
 
-        private void frmDetalhesTarefas_Load(object sender, EventArgs e)
+
+
+        private void frmDetalhesTarefa_Load(object sender, EventArgs e)
         {
             using (var db = new Basededados())
             {
@@ -33,8 +35,11 @@ namespace iTasks
 
                 // Textboxes
                 txtId.Text = tarefa.Id.ToString();
-                txtDataRealini.Text = tarefa.DataRealInicio.ToString("yyyy-MM-dd");
-                txtdataRealFim.Text = tarefa.DataRealFim.ToString("yyyy-MM-dd");
+                //txtDataRealini.Text = tarefa.DataRealInicio.ToString("yyyy-MM-dd");
+                //txtdataRealFim.Text = tarefa.DataRealFim.ToString("yyyy-MM-dd");
+                txtDataRealini.Text = tarefa.DataRealInicio?.ToString("yyyy-MM-dd") ?? "";
+                txtdataRealFim.Text = tarefa.DataRealFim?.ToString("yyyy-MM-dd") ?? "";
+                // Alterei acima - para que este esteja adaptado para ser opcional e caso o valor for null retorna string vazia ""
                 txtEstado.Text = tarefa.EstadoAtual.ToString();
                 txtDataCriacao.Text = tarefa.DataCreation.ToString("yyyy-MM-dd");
                 txtDesc.Text = tarefa.Descricao;
@@ -57,13 +62,13 @@ namespace iTasks
                     .ToList();
                 cbProgramador.DisplayMember = "Nome";
                 cbProgramador.ValueMember = "Id";
-                cbProgramador.SelectedValue = tarefa.ProgramadorId;
+                cbProgramador.SelectedValue = tarefa.ProgramadorID;
             }
         }
 
 
 
-        private void btGravar_Click(object sender, EventArgs e)
+        private void btGravar_Click_1(object sender, EventArgs e)
         {
             using (var db = new Basededados())
             {
@@ -75,32 +80,32 @@ namespace iTasks
                 }
 
                 // Update fields from UI
-                tarefa.DataRealInicio = DateTime.Parse(txtDataRealini.Text);
-                tarefa.DataRealFim = DateTime.Parse(txtdataRealFim.Text);
+                tarefa.DataRealInicio = string.IsNullOrWhiteSpace(txtDataRealini.Text)  // Preciso ver melhor
+                    ? (DateTime?)null
+                    : DateTime.Parse(txtDataRealini.Text);
+                tarefa.DataRealFim = string.IsNullOrWhiteSpace(txtdataRealFim.Text)  // como havia mudado os DateTime para opcional
+                    ? (DateTime?)null                                                // para assim parar com os erros
+                    : DateTime.Parse(txtdataRealFim.Text);
                 tarefa.Descricao = txtDesc.Text;
-                tarefa.EstadoAtual = (Tarefa.estadoatual)int.Parse(txtEstado.Text); // mudei o parse aqui 
+                tarefa.EstadoAtual = (Tarefa.estadoatual)Enum.Parse(typeof(Tarefa.estadoatual), txtEstado.Text); // mudei o parse aqui 
                 tarefa.DataPrevistaInicio = dtInicio.Value;
                 tarefa.DataPrevistaFim = dtFim.Value;
                 tarefa.Ordem = int.Parse(txtOrdem.Text);
                 tarefa.StoryPoints = int.Parse(txtStoryPoints.Text);
                 tarefa.TipoTarefaId = (int)cbTipoTarefa.SelectedValue;
-                tarefa.ProgramadorId = (int)cbProgramador.SelectedValue;
+                tarefa.ProgramadorID = (int)cbProgramador.SelectedValue;
 
                 db.SaveChanges();
                 MessageBox.Show("Alterações salvas com sucesso!");
                 this.Close();
             }
+
         }
 
-
-        private void btFechar_Click(object sender, EventArgs e)
+        private void btFechar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btGravar_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

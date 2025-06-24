@@ -275,6 +275,7 @@
             this.btFechar.TabIndex = 29;
             this.btFechar.Text = "Fechar";
             this.btFechar.UseVisualStyleBackColor = true;
+            this.btFechar.Click += new System.EventHandler(this.btFechar_Click_1);
             // 
             // txtStoryPoints
             // 
@@ -327,6 +328,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmDetalhesTarefa";
             this.Text = "frmDetalhesTarefa";
+            this.Load += new System.EventHandler(this.frmDetalhesTarefa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

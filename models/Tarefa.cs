@@ -30,8 +30,8 @@ namespace iTasks
         public DateTime DataPrevistaInicio { get; set; }
         public DateTime DataPrevistaFim { get; set; }
 
-        public DateTime DataRealInicio { get; set; }
-        public DateTime DataRealFim { get; set; }
+        public DateTime? DataRealInicio { get; set; }
+        public DateTime? DataRealFim { get; set; }
         public DateTime DataCreation { get; set; }
 
         public int Ordem { get; set; }
@@ -47,7 +47,7 @@ namespace iTasks
         // public virtual TipoTarefa TipoTarefa { get; set; }
 
 
-        public int ProgramadorId { get; set; }
+        public int ProgramadorID { get; set; }
         public Programador Programador { get; set; }
         // public virtual Programador Programador { get; set; }
 

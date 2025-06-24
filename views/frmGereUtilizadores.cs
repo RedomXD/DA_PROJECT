@@ -16,14 +16,30 @@ namespace iTasks
        
         List<Programador> ListaProgramadores = new List<Programador>();
         List<Gestor> ListaGestores = new List<Gestor>();
-        public frmGereUtilizadores()
+
+        private Utilizador utilizadorLogado;
+
+
+        public frmGereUtilizadores(Utilizador utilizador)
         {
+
+            if (!(utilizador is Gestor))
+            {
+                MessageBox.Show("Apenas Gestores podem aceder a este formulário.");
+                Close(); 
+                return;
+            }
+
             InitializeComponent();
+
+            utilizadorLogado = utilizador;
+
 
             cbDepartamento.Items.AddRange(Enum.GetNames(typeof(Departamento)));
 
             cbNivelProg.Items.AddRange(Enum.GetNames(typeof(NivelExperiencia)));
             AtualizarListas();
+
         }
 
         private void AtualizarListas()
@@ -405,6 +421,50 @@ namespace iTasks
 
         }
 
-        
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
+        private void verKanbanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form kanban;
+
+            if (utilizadorLogado is Gestor gestor)
+            {
+                kanban = new frmKanban(gestor);
+            }
+            else if (utilizadorLogado is Programador programador)
+            {
+                kanban = new frmKanban(programador);
+            }
+            else
+            {
+                MessageBox.Show("Tipo de utilizador desconhecido.");
+                return;
+            }
+
+            kanban.Show();
+            this.Close();
+        }
+
+        private void tarefasEmCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tarefaEmCurso = new frmConsultaTarefasEmCurso(utilizadorLogado);
+
+            tarefaEmCurso.Show();
+
+            this.Close();
+        }
+
+        private void tarefasTerminadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tarefaTerminadas = new frmConsultarTarefasConcluidas(utilizadorLogado);
+
+            tarefaTerminadas.Show();
+
+            this.Close();
+        }
     }
 }

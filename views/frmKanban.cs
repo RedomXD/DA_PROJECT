@@ -56,6 +56,9 @@ namespace iTasks
                 // só o Gestor pode Criar Tarefas, buttão Nova Tarefa desaparece para Programador
                 btNova.Visible = false;
 
+                // Esconder botão de apagar tarefas
+                btApagarTarefa.Visible = false;
+
                 // só o Gestor pode gerir os Utilizadores e Tipo de Tarefas, dropdown desaparece para Programador
                 gerirUtilizadoresToolStripMenuItem.Visible = false;
                 gerirTiposDeTarefasToolStripMenuItem.Visible = false;
@@ -275,11 +278,10 @@ namespace iTasks
                     EstadoAtual = Tarefa.estadoatual.todo,
                     DataPrevistaInicio = DateTime.Now,
                     DataPrevistaFim = DateTime.Now.AddDays(7),
-                    DataRealInicio = DateTime.Now,      // importante definir
-                    DataRealFim = DateTime.Now.AddDays(1), // importante definir
+                    // DataRealInicio e DataRealFim só vão ser definidos na mudança do Estadi no ControllerTarefa.cs
                     DataCreation = DateTime.Now,
                     Ordem = 1,
-                    ProgramadorId = programador.Id,
+                    ProgramadorID = programador.Id,
                     GestorID = gestor.Id,
                     TipoTarefaId = tipoTarefa.TipoTarefaId
                 };
@@ -290,6 +292,11 @@ namespace iTasks
                 try
                 {
                     db.SaveChanges();
+
+                    //Obter o ID após salvar e abrir o formulário de detalhes
+                    var frmDetalhes = new frmDetalhesTarefa(novaTarefa.Id);
+                    frmDetalhes.ShowDialog();
+
                     MessageBox.Show("Tarefa adicionada com sucesso!");
                 }
                 catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
@@ -298,7 +305,44 @@ namespace iTasks
                 }
             }
 
+            //Atualiza a vista depois de adicionar tarefa ao form
             LoadTarefas();
+        }
+
+
+        private void btApagarTarefa_Click(object sender, EventArgs e)
+        {
+            Tarefa tarefa = null;
+
+            if (lstTodo.SelectedItem is Tarefa t1)
+                tarefa = t1;
+            else if (lstDoing.SelectedItem is Tarefa t2)
+                tarefa = t2;
+            else if (lstDone.SelectedItem is Tarefa t3)
+                tarefa = t3;
+
+            if (tarefa != null)
+            {
+                var confirm = MessageBox.Show($"Deseja apagar a tarefa '{tarefa.Descricao}'?", "Confirmação", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    using (var db = new Basededados())
+                    {
+                        var tarefaDb = db.Tarefas.Find(tarefa.Id);
+                        if (tarefaDb != null)
+                        {
+                            db.Tarefas.Remove(tarefaDb);
+                            db.SaveChanges();
+                        }
+                    }
+
+                    LoadTarefas();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma tarefa para apagar.");
+            }
         }
 
 
@@ -307,7 +351,16 @@ namespace iTasks
         {
             if (lstTodo.SelectedItem is Tarefa tarefa)
             {
-                UpdateTarefaEstado(tarefa.Id, Tarefa.estadoatual.doing);
+                if (utilizadorLogado is Programador programador)
+                {
+                    var controller = new Controllers.ControllerTarefa();
+                    bool sucesso = controller.MoverTarefa(tarefa.Id, programador.Id, Tarefa.estadoatual.doing);
+
+                    if (!sucesso)
+                        MessageBox.Show("Não é possível mover para Doing. Verifica se já tens 2 tarefas ou se existem tarefas pendentes antes desta.");
+
+                    LoadTarefas();
+                }
             }
         }
 
@@ -315,7 +368,16 @@ namespace iTasks
         {
             if (lstDoing.SelectedItem is Tarefa tarefa)
             {
-                UpdateTarefaEstado(tarefa.Id, Tarefa.estadoatual.todo);
+                if (utilizadorLogado is Programador programador)
+                {
+                    var controller = new Controllers.ControllerTarefa();
+                    bool sucesso = controller.MoverTarefa(tarefa.Id, programador.Id, Tarefa.estadoatual.todo);
+
+                    if (!sucesso)
+                        MessageBox.Show("Não foi possível mover para ToDo.");
+
+                    LoadTarefas();
+                }
             }
         }
 
@@ -323,15 +385,22 @@ namespace iTasks
         {
             if (lstDoing.SelectedItem is Tarefa tarefa)
             {
-                UpdateTarefaEstado(tarefa.Id, Tarefa.estadoatual.done);
+                if (utilizadorLogado is Programador programador)
+                {
+                    var controller = new Controllers.ControllerTarefa();
+                    bool sucesso = controller.MoverTarefa(tarefa.Id, programador.Id, Tarefa.estadoatual.done);
+
+                    if (!sucesso)
+                        MessageBox.Show("Não foi possível concluir a tarefa. Verifica se ela está realmente em Doing.");
+
+                    LoadTarefas();
+                }
             }
         }
 
 
-        private void btPrevisao_Click(object sender, EventArgs e)
-        {
-            // POR FAZER
-        }
+
+        //MenuToolStrip, o DropDown Menu e suas funcionalidades - abaixo
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -341,29 +410,22 @@ namespace iTasks
 
         private void exportarParaCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var db = new Basededados())
+            if (!(utilizadorLogado is Gestor gestor))
             {
-                var tarefas = db.Tarefas.Include(t => t.Programador).ToList();
+                MessageBox.Show("Apenas o Gestor pode exportar tarefas.");
+                return;
+            }
 
-                var sb = new StringBuilder();
-                sb.AppendLine("Id,Descrição,Estado,Programador,Ordem");
+            using (SaveFileDialog savefiledialog = new SaveFileDialog())
+            {
+                savefiledialog.Filter = "CSV Files (*.csv)|*.csv";
+                savefiledialog.FileName = "tarefas_concluidas.csv";
 
-                foreach (var t in tarefas)
+                if (savefiledialog.ShowDialog() == DialogResult.OK)
                 {
-                    sb.AppendLine($"{t.Id},\"{t.Descricao}\",{t.EstadoAtual},{t.Programador?.Nome},{t.Ordem}");
-                }
-
-                // Perguntar onde guardar
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.Filter = "CSV Files (*.csv)|*.csv";
-                    sfd.FileName = "tarefas_export.csv";
-
-                    if (sfd.ShowDialog() == DialogResult.OK)
-                    {
-                        System.IO.File.WriteAllText(sfd.FileName, sb.ToString(), Encoding.UTF8);
-                        MessageBox.Show("Exportação concluída com sucesso!", "Exportar CSV", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    var controllerTarefa = new Controllers.ControllerTarefa();
+                    controllerTarefa.ExportarTarefasConcluidasParaCSV(gestor.Id, savefiledialog.FileName);
+                    MessageBox.Show("Exportação concluída em sucesso!!", "Exportar CSV", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -371,7 +433,7 @@ namespace iTasks
         // Toolstrip redirect
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var gereUtilizadores = new frmGereUtilizadores();
+            var gereUtilizadores = new frmGereUtilizadores(utilizadorLogado);
 
             gereUtilizadores.Show();
 
@@ -380,7 +442,7 @@ namespace iTasks
 
         private void gerirTiposDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var gereTiposTarefa = new frmGereTiposTarefas();
+            var gereTiposTarefa = new frmGereTiposTarefas(utilizadorLogado);
 
             gereTiposTarefa.Show();
 
@@ -389,7 +451,7 @@ namespace iTasks
 
         private void tarefasTerminadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tarefaTerminadas = new frmConsultarTarefasConcluidas();
+            var tarefaTerminadas = new frmConsultarTarefasConcluidas(utilizadorLogado);
 
             tarefaTerminadas.Show();
 
@@ -398,11 +460,37 @@ namespace iTasks
 
         private void tarefasEmCursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tarefaEmCurso = new frmConsultaTarefasEmCurso();
+            var tarefaEmCurso = new frmConsultaTarefasEmCurso(utilizadorLogado);
 
             tarefaEmCurso.Show();
 
             this.Close();
+        }
+
+
+
+        //Botao de Previsão para a Estimativa de Conclusão com base nos StoryPoints
+        private void btPrevisao_Click(object sender, EventArgs e)
+        {
+            // POR FAZER
+
+            var controllerTarefa = new Controllers.ControllerTarefa();
+            bool ProgramadorLogado = utilizadorLogado is Programador;
+
+            DateTime? previsao = controllerTarefa.PreverConclusaoTarefas(utilizadorLogado.Id, ProgramadorLogado);
+
+            if (previsao == null)
+            {
+                MessageBox.Show("Dados insuficientes para calcular a previsão.");
+            }
+            else
+            {
+                MessageBox.Show($"Previsão de conclusão das tarefas pendentes: {previsao.Value:dd/MM/yyyy}",
+                                "Estimativa de Conclusão",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+
         }
 
 
@@ -428,5 +516,11 @@ namespace iTasks
         {
 
         }
+
+        private void frmKanban_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

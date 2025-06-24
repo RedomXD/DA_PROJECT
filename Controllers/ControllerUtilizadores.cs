@@ -57,15 +57,12 @@ namespace iTasks.Controllers
 
         public List<Gestor> ListarGestores()
         {
-            List<Gestor> ListaGestores = new List<Gestor>();
             using (var db = new Basededados())
             {
-              var querygestores = from Gestores in db.Gestors select Gestores;
-                foreach (var gestor in querygestores)
-                {
-                    ListaGestores.Add(gestor);
-                }
-                return ListaGestores;
+                var queryGestores = from gestor in db.Gestors
+                                    select gestor;
+
+                return queryGestores.ToList();
             }
         }
 

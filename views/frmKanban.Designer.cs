@@ -50,6 +50,7 @@
             this.btNova = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btPrevisao = new System.Windows.Forms.Button();
+            this.btApagarTarefa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -188,20 +189,20 @@
             // tarefasTerminadasToolStripMenuItem
             // 
             this.tarefasTerminadasToolStripMenuItem.Name = "tarefasTerminadasToolStripMenuItem";
-            this.tarefasTerminadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tarefasTerminadasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.tarefasTerminadasToolStripMenuItem.Text = "Tarefas Concluídas";
             this.tarefasTerminadasToolStripMenuItem.Click += new System.EventHandler(this.tarefasTerminadasToolStripMenuItem_Click);
             // 
             // tarefasEmCursoToolStripMenuItem
             // 
             this.tarefasEmCursoToolStripMenuItem.Name = "tarefasEmCursoToolStripMenuItem";
-            this.tarefasEmCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tarefasEmCursoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.tarefasEmCursoToolStripMenuItem.Text = "Tarefas em Curso";
             this.tarefasEmCursoToolStripMenuItem.Click += new System.EventHandler(this.tarefasEmCursoToolStripMenuItem_Click);
             // 
             // btSetDoing
             // 
-            this.btSetDoing.Location = new System.Drawing.Point(165, 502);
+            this.btSetDoing.Location = new System.Drawing.Point(300, 502);
             this.btSetDoing.Name = "btSetDoing";
             this.btSetDoing.Size = new System.Drawing.Size(146, 23);
             this.btSetDoing.TabIndex = 5;
@@ -211,7 +212,7 @@
             // 
             // btSetDone
             // 
-            this.btSetDone.Location = new System.Drawing.Point(475, 502);
+            this.btSetDone.Location = new System.Drawing.Point(721, 502);
             this.btSetDone.Name = "btSetDone";
             this.btSetDone.Size = new System.Drawing.Size(144, 23);
             this.btSetDone.TabIndex = 6;
@@ -221,7 +222,7 @@
             // 
             // btSetTodo
             // 
-            this.btSetTodo.Location = new System.Drawing.Point(323, 502);
+            this.btSetTodo.Location = new System.Drawing.Point(498, 502);
             this.btSetTodo.Name = "btSetTodo";
             this.btSetTodo.Size = new System.Drawing.Size(144, 23);
             this.btSetTodo.TabIndex = 7;
@@ -231,9 +232,9 @@
             // 
             // btNova
             // 
-            this.btNova.Location = new System.Drawing.Point(15, 502);
+            this.btNova.Location = new System.Drawing.Point(15, 499);
             this.btNova.Name = "btNova";
-            this.btNova.Size = new System.Drawing.Size(104, 23);
+            this.btNova.Size = new System.Drawing.Size(109, 30);
             this.btNova.TabIndex = 8;
             this.btNova.Text = "Nova Tarefa";
             this.btNova.UseVisualStyleBackColor = true;
@@ -259,11 +260,22 @@
             this.btPrevisao.UseVisualStyleBackColor = true;
             this.btPrevisao.Click += new System.EventHandler(this.btPrevisao_Click);
             // 
+            // btApagarTarefa
+            // 
+            this.btApagarTarefa.Location = new System.Drawing.Point(148, 502);
+            this.btApagarTarefa.Name = "btApagarTarefa";
+            this.btApagarTarefa.Size = new System.Drawing.Size(92, 23);
+            this.btApagarTarefa.TabIndex = 11;
+            this.btApagarTarefa.Text = "Apagar Tarefa";
+            this.btApagarTarefa.UseVisualStyleBackColor = true;
+            this.btApagarTarefa.Click += new System.EventHandler(this.btApagarTarefa_Click);
+            // 
             // frmKanban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 537);
+            this.Controls.Add(this.btApagarTarefa);
             this.Controls.Add(this.btPrevisao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btNova);
@@ -277,6 +289,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmKanban";
             this.Text = "frmKanban";
+            this.Load += new System.EventHandler(this.frmKanban_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -311,5 +324,6 @@
         private System.Windows.Forms.Button btNova;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btPrevisao;
+        private System.Windows.Forms.Button btApagarTarefa;
     }
 }

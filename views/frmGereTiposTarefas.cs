@@ -11,9 +11,14 @@ namespace iTasks
     {
         private List<TipoTarefa> listaTipoTarefa = new List<TipoTarefa>();
         private ControllerTipoTarefa controllerTipoTarefa = new ControllerTipoTarefa();
-        public frmGereTiposTarefas()
+
+        private Utilizador utilizadorLogado;
+
+        public frmGereTiposTarefas(Utilizador utilizador)
         {
             InitializeComponent();
+
+            utilizadorLogado = utilizador;
 
             /*
             var ControllerTipoTarefa = new ControllerTipoTarefa();
@@ -129,6 +134,52 @@ namespace iTasks
                     MessageBox.Show("Erro ao apagar o tipo de tarefa.");
                 }
             }
+        }
+
+        private void tarefasTerminadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tarefaTerminadas = new frmConsultarTarefasConcluidas(utilizadorLogado);
+
+            tarefaTerminadas.Show();
+
+            this.Close();
+        }
+
+        private void tarefasEmCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tarefaEmCurso = new frmConsultaTarefasEmCurso(utilizadorLogado);
+
+            tarefaEmCurso.Show();
+
+            this.Close();
+        }
+
+        private void verKanbanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form kanban;
+
+            if (utilizadorLogado is Gestor gestor)
+            {
+                kanban = new frmKanban(gestor);
+            }
+            else if (utilizadorLogado is Programador programador)
+            {
+                kanban = new frmKanban(programador);
+            }
+            else
+            {
+                MessageBox.Show("Tipo de utilizador desconhecido.");
+                return;
+            }
+
+            kanban.Show();
+            this.Close();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
         }
     }
 }

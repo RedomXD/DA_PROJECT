@@ -36,6 +36,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lstListaGestores = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnApagarGestores = new System.Windows.Forms.Button();
+            this.btnUpdateGestores = new System.Windows.Forms.Button();
             this.chkGereUtilizadores = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPasswordGestor = new System.Windows.Forms.TextBox();
@@ -44,6 +46,8 @@
             this.txtUsernameGestor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnApagarProg = new System.Windows.Forms.Button();
+            this.btnUpdateProg = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cbGestorProg = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,14 +63,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtNomeProg = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnUpdateGestores = new System.Windows.Forms.Button();
-            this.btnApagarGestores = new System.Windows.Forms.Button();
-            this.btnUpdateProg = new System.Windows.Forms.Button();
-            this.btnApagarProg = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ficheiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tarefasTerminadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tarefasEmCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verKanbanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btGravarGestor
@@ -149,12 +158,32 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtNomeGestor);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(11, 36);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(511, 480);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gestores";
+            // 
+            // btnApagarGestores
+            // 
+            this.btnApagarGestores.Location = new System.Drawing.Point(297, 357);
+            this.btnApagarGestores.Name = "btnApagarGestores";
+            this.btnApagarGestores.Size = new System.Drawing.Size(197, 23);
+            this.btnApagarGestores.TabIndex = 45;
+            this.btnApagarGestores.Text = "Apagar Gestor";
+            this.btnApagarGestores.UseVisualStyleBackColor = true;
+            this.btnApagarGestores.Click += new System.EventHandler(this.btnApagarGestores_Click);
+            // 
+            // btnUpdateGestores
+            // 
+            this.btnUpdateGestores.Location = new System.Drawing.Point(294, 319);
+            this.btnUpdateGestores.Name = "btnUpdateGestores";
+            this.btnUpdateGestores.Size = new System.Drawing.Size(201, 31);
+            this.btnUpdateGestores.TabIndex = 44;
+            this.btnUpdateGestores.Text = "Atualizar Gestor";
+            this.btnUpdateGestores.UseVisualStyleBackColor = true;
+            this.btnUpdateGestores.Click += new System.EventHandler(this.btnUpdateGestores_Click);
             // 
             // chkGereUtilizadores
             // 
@@ -235,12 +264,32 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.txtNomeProg);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(529, 12);
+            this.groupBox3.Location = new System.Drawing.Point(528, 36);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(511, 480);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Programadores";
+            // 
+            // btnApagarProg
+            // 
+            this.btnApagarProg.Location = new System.Drawing.Point(294, 349);
+            this.btnApagarProg.Name = "btnApagarProg";
+            this.btnApagarProg.Size = new System.Drawing.Size(197, 23);
+            this.btnApagarProg.TabIndex = 46;
+            this.btnApagarProg.Text = "Apagar Programador";
+            this.btnApagarProg.UseVisualStyleBackColor = true;
+            this.btnApagarProg.Click += new System.EventHandler(this.btnApagarProg_Click);
+            // 
+            // btnUpdateProg
+            // 
+            this.btnUpdateProg.Location = new System.Drawing.Point(294, 312);
+            this.btnUpdateProg.Name = "btnUpdateProg";
+            this.btnUpdateProg.Size = new System.Drawing.Size(201, 31);
+            this.btnUpdateProg.TabIndex = 46;
+            this.btnUpdateProg.Text = "Atualizar Programador";
+            this.btnUpdateProg.UseVisualStyleBackColor = true;
+            this.btnUpdateProg.Click += new System.EventHandler(this.btnUpdateProg_Click);
             // 
             // label11
             // 
@@ -373,51 +422,79 @@
             this.label10.TabIndex = 35;
             this.label10.Text = "Nome:";
             // 
-            // btnUpdateGestores
+            // menuStrip1
             // 
-            this.btnUpdateGestores.Location = new System.Drawing.Point(294, 319);
-            this.btnUpdateGestores.Name = "btnUpdateGestores";
-            this.btnUpdateGestores.Size = new System.Drawing.Size(201, 31);
-            this.btnUpdateGestores.TabIndex = 44;
-            this.btnUpdateGestores.Text = "Atualizar Gestor";
-            this.btnUpdateGestores.UseVisualStyleBackColor = true;
-            this.btnUpdateGestores.Click += new System.EventHandler(this.btnUpdateGestores_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ficheiroToolStripMenuItem,
+            this.utilizadoresToolStripMenuItem,
+            this.listagensToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1051, 24);
+            this.menuStrip1.TabIndex = 40;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnApagarGestores
+            // ficheiroToolStripMenuItem
             // 
-            this.btnApagarGestores.Location = new System.Drawing.Point(297, 357);
-            this.btnApagarGestores.Name = "btnApagarGestores";
-            this.btnApagarGestores.Size = new System.Drawing.Size(197, 23);
-            this.btnApagarGestores.TabIndex = 45;
-            this.btnApagarGestores.Text = "Apagar Gestor";
-            this.btnApagarGestores.UseVisualStyleBackColor = true;
-            this.btnApagarGestores.Click += new System.EventHandler(this.btnApagarGestores_Click);
+            this.ficheiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sairToolStripMenuItem});
+            this.ficheiroToolStripMenuItem.Name = "ficheiroToolStripMenuItem";
+            this.ficheiroToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.ficheiroToolStripMenuItem.Text = "Ficheiro";
             // 
-            // btnUpdateProg
+            // sairToolStripMenuItem
             // 
-            this.btnUpdateProg.Location = new System.Drawing.Point(294, 312);
-            this.btnUpdateProg.Name = "btnUpdateProg";
-            this.btnUpdateProg.Size = new System.Drawing.Size(201, 31);
-            this.btnUpdateProg.TabIndex = 46;
-            this.btnUpdateProg.Text = "Atualizar Programador";
-            this.btnUpdateProg.UseVisualStyleBackColor = true;
-            this.btnUpdateProg.Click += new System.EventHandler(this.btnUpdateProg_Click);
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // btnApagarProg
+            // utilizadoresToolStripMenuItem
             // 
-            this.btnApagarProg.Location = new System.Drawing.Point(294, 349);
-            this.btnApagarProg.Name = "btnApagarProg";
-            this.btnApagarProg.Size = new System.Drawing.Size(197, 23);
-            this.btnApagarProg.TabIndex = 46;
-            this.btnApagarProg.Text = "Apagar Programador";
-            this.btnApagarProg.UseVisualStyleBackColor = true;
-            this.btnApagarProg.Click += new System.EventHandler(this.btnApagarProg_Click);
+            this.utilizadoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verKanbanToolStripMenuItem});
+            this.utilizadoresToolStripMenuItem.Name = "utilizadoresToolStripMenuItem";
+            this.utilizadoresToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
+            this.utilizadoresToolStripMenuItem.Text = "Gestão da Aplicação";
+            // 
+            // listagensToolStripMenuItem
+            // 
+            this.listagensToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tarefasTerminadasToolStripMenuItem,
+            this.tarefasEmCursoToolStripMenuItem});
+            this.listagensToolStripMenuItem.Name = "listagensToolStripMenuItem";
+            this.listagensToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.listagensToolStripMenuItem.Text = "Listagens";
+            // 
+            // tarefasTerminadasToolStripMenuItem
+            // 
+            this.tarefasTerminadasToolStripMenuItem.Name = "tarefasTerminadasToolStripMenuItem";
+            this.tarefasTerminadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tarefasTerminadasToolStripMenuItem.Text = "Tarefas Concluídas";
+            this.tarefasTerminadasToolStripMenuItem.Click += new System.EventHandler(this.tarefasTerminadasToolStripMenuItem_Click);
+            // 
+            // tarefasEmCursoToolStripMenuItem
+            // 
+            this.tarefasEmCursoToolStripMenuItem.Name = "tarefasEmCursoToolStripMenuItem";
+            this.tarefasEmCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tarefasEmCursoToolStripMenuItem.Text = "Tarefas em Curso";
+            this.tarefasEmCursoToolStripMenuItem.Click += new System.EventHandler(this.tarefasEmCursoToolStripMenuItem_Click);
+            // 
+            // verKanbanToolStripMenuItem
+            // 
+            this.verKanbanToolStripMenuItem.Name = "verKanbanToolStripMenuItem";
+            this.verKanbanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verKanbanToolStripMenuItem.Text = "Ver Kanban";
+            this.verKanbanToolStripMenuItem.Click += new System.EventHandler(this.verKanbanToolStripMenuItem_Click);
             // 
             // frmGereUtilizadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 504);
+            this.ClientSize = new System.Drawing.Size(1051, 539);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmGereUtilizadores";
@@ -428,7 +505,10 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -469,5 +549,13 @@
         private System.Windows.Forms.Button btnUpdateGestores;
         private System.Windows.Forms.Button btnApagarProg;
         private System.Windows.Forms.Button btnUpdateProg;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ficheiroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilizadoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listagensToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tarefasTerminadasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tarefasEmCursoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verKanbanToolStripMenuItem;
     }
 }

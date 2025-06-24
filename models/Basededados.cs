@@ -31,9 +31,17 @@ namespace iTasks
             modelBuilder.Entity<Tarefa>()
                 .HasRequired(t => t.Programador)
                 .WithMany()
-                .HasForeignKey(t => t.ProgramadorId)
+                .HasForeignKey(t => t.ProgramadorID)
                 .WillCascadeOnDelete(false);
         }
+
+
+        // ESTA FUNCAO Recria a base de Dados semprpe que houver alguma alteração no modelo, permitindo este dar sempre run
+        public Basededados() : base("name=Basededados")
+        {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Basededados>());
+        }
+
     }
 
 }
