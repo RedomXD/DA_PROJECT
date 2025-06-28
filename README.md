@@ -38,5 +38,5 @@ Aplicação de gestão de tarefas em estilo Kanban, desenvolvida para a unidade 
 
 ## Exemplo de utilizador válido (para testes)
 
-Username: admin
+Username: adm
 Password: 1234
