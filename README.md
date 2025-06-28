@@ -36,16 +36,7 @@ Aplicação de gestão de tarefas em estilo Kanban, desenvolvida para a unidade 
 
 > O registo de novos utilizadores é feito apenas por um utilizador com "GereUtilizadores = true"
 
-## Base de Dados
-
-A base de dados utiliza "Code First" com "Entity Framework". A classe "Basededados" é o "DbContext" principal e inclui os "DbSet<T>" de:
-
-- "Utilizadores"
-- "Tarefas"
-- "TipoTarefas"
-- (e outros conforme o projeto evoluir)
-
-## 🧪 Exemplo de utilizador válido (para testes)
+## Exemplo de utilizador válido (para testes)
 
 Username: admin
 Password: 1234
